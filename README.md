@@ -62,6 +62,11 @@ This configuration does not depend on a specific login manager.
 
 Hyprland can be started from a TTY or through a login manager depending on how your system is configured.
 
+### Wallpaper
+
+The wallpaper used in the screenshots is available in the
+[Releases](https://drive.google.com/drive/folders/1ubTPX-AHSEwgFKzmN4rK6RSA_vKdBR9p?usp=sharing)section.
+
 ## Customization
 
 The configuration contains custom settings for:
