@@ -1,143 +1,128 @@
-# Purple-Hypr-Rise
+# PURPLE HYPR RISE
 
-My personal Hyprland configuration for Arch Linux.
+A personal **Arch Linux + Hyprland** desktop configuration built around a deep-purple aesthetic, transparent surfaces, custom Waybar modules, terminal theming and a practical keyboard-driven workflow.
 
-A minimal and clean setup focused on customization, simplicity and a comfortable workflow. Nothing too bloated — just the stuff I actually use.
+> Personal setup. Made to be used, tweaked and broken until it feels right.
 
-## Screenshots
+---
 
-![Screenshot](screenshots/prev2.png)
+## Preview
 
-![Screenshot](screenshots/prev1.png)
+<p align="center">
+  <img src="screenshots/desktop-main.png" alt="Purple-Hypr-Rise desktop" width="100%">
+</p>
 
-![Screenshot](screenshots/prev3.png)
+<p align="center">
+  <img src="screenshots/terminal-cava.png" alt="Kitty terminal and Cava" width="49%">
+  <img src="screenshots/desktop-apps.png" alt="Desktop applications" width="49%">
+</p>
 
-## Requirements
+---
 
-This configuration is made for Arch Linux with Hyprland.
+## Highlights
 
-The main components used by the setup are:
+- **Hyprland** — Lua-based configuration, animations, gestures, keybindings and window rules.
+- **Purple visual identity** — dark surfaces, vivid accents, transparency and blur.
+- **Waybar** — custom layout, modules, typography and styling.
+- **Kitty + Cava** — themed terminal and audio visualizer.
+- **Fastfetch** — customized system information display.
+- **Desktop integration** — Qt6ct, GTK font settings, clipboard history, notifications and OSD.
+- **Wallpaper setup** — animated wallpaper support through mpvpaper.
 
-* Hyprland
-* Waybar
-* Kitty
-* Zsh
-* Fastfetch
-* Hyprlauncher
-* Hyprtoolkit
-* Rofi
-* Cava
-* Playerctl
-* Grimblast
-* Swappy
-* Cliphist
-* Qt6ct
-* mpvpaper
+## Stack
 
-Make sure the required packages are installed before using the configuration.
+| Area | Components |
+|---|---|
+| Compositor | Hyprland |
+| Bar | Waybar |
+| Terminal | Kitty |
+| Launcher | Hyprlauncher, Rofi |
+| System info | Fastfetch |
+| Audio visualizer | Cava |
+| Notifications / OSD | SwayNC, SwayOSD |
+| Clipboard | Cliphist |
+| Qt appearance | Qt6ct |
+| Wallpaper | mpvpaper |
+| Screenshot workflow | grim, slurp, Swappy |
+| Media controls | Playerctl |
+
+Some tools are optional and can be removed from the configuration if you do not use them.
+
+## Typography
+
+The setup uses different typefaces for different parts of the desktop:
+
+| Component | Typeface |
+|---|---|
+| Kitty | Unbounded Nerd Font |
+| Waybar | SF Pro Display |
+| Waybar fallback | JetBrainsMono Nerd Font Propo |
+| Qt applications | Unbounded |
+| GTK interface | Noto Sans |
+
+Install the fonts separately before applying the configuration. Font package names may differ depending on the source you use.
+
+To restore the GTK interface font:
+
+```bash
+./scripts/set-font.sh
+```
 
 ## Installation
 
-Clone the repository:
+This repository is a personal configuration, not a universal installer. Review the files before copying them: some settings (monitor output, wallpaper paths, autostart commands and installed applications) are specific to my machine.
 
 ```bash
 git clone https://github.com/Fillos-A98/Purple-Hypr-Rise.git
 cd Purple-Hypr-Rise
 ```
 
-Copy the configuration files to your home directory:
+Back up your existing configuration, then copy the included configs:
 
 ```bash
+mkdir -p ~/.config
 cp -r config/* ~/.config/
-cp .zshrc ~/.zshrc
+cp .bashrc ~/.bashrc
+cp .bash_profile ~/.bash_profile
 ```
 
-If the repository contains system configuration files, copy them manually to the appropriate locations.
+Apply the GTK font setting:
 
-After that, log into Hyprland and adjust anything you want.
+```bash
+chmod +x scripts/set-font.sh
+./scripts/set-font.sh
+```
 
-> This repository does not include an automatic installation script. The configuration is intentionally meant to be installed and adapted manually.
+Log into Hyprland and adjust the machine-specific values before relying on the setup.
 
-## Modules & Components
+## Repository layout
 
-The setup currently uses:
+```text
+Purple-Hypr-Rise/
+├── config/
+│   ├── cava/
+│   ├── fastfetch/
+│   ├── hypr/
+│   ├── kitty/
+│   ├── qt6ct/
+│   └── waybar/
+├── scripts/
+│   └── set-font.sh
+├── screenshots/
+├── .bashrc
+├── .bash_profile
+└── README.md
+```
 
-* Hyprland
-* Waybar
-* Kitty
-* Zsh
-* Fastfetch
-* Hyprlauncher
-* Hyprtoolkit
-* Rofi
-* Cava
-* Playerctl
-* Grimblast
-* Swappy
-* Cliphist
-* Qt6ct
-* mpvpaper
+## Customization notes
 
-Some components are optional and can be removed if you don't need them.
+- Update the monitor name and resolution in the Hyprland configuration.
+- Change wallpaper paths and autostart commands to match your system.
+- Install the applications and fonts listed above before enabling their related modules.
+- Review keybindings and scripts before using them on your machine.
 
-## Login Manager
-
-This configuration does not depend on a specific login manager.
-
-Hyprland can be started from a TTY or through a login manager depending on how your system is configured.
-
-## Wallpaper
-
-The wallpaper used in the screenshots is available here:
-
-[Download wallpaper](https://drive.google.com/drive/folders/1ubTPX-AHSEwgFKzmN4rK6RSA_vKdBR9p?usp=sharing)
-
-The wallpaper is not included in the repository.
-
-## Customization
-
-The configuration contains custom settings for:
-
-* Hyprland animations
-* Keybinds
-* Waybar
-* Cava
-* Hyprlauncher
-* Hyprtoolkit
-* Wallpapers
-* Cursor
-* Colors
-* Transparency
-* Terminal
-* Fastfetch
-* Various scripts and utilities
-
-The configuration uses a light, clean visual style with blue/purple accents.
-
-## Notes
-
-This is a personal configuration, so some parts may require adjustments depending on your hardware, installed packages and system setup.
-
-The configuration is intended to be a starting point rather than a universal one-size-fits-all setup.
+The wallpaper shown in the earlier screenshots is available [here](https://drive.google.com/drive/folders/1ubTPX-AHSEwgFKzmN4rK6RSA_vKdBR9p?usp=sharing). The wallpaper itself is not included in this repository.
 
 ## License
 
-Copyright (c) 2026 Fillos-A98
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files, to deal in the Software
-without restriction, including without limitation the rights to use, copy,
-modify, merge, publish, distribute, sublicense, and/or sell copies of the
-Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+MIT
