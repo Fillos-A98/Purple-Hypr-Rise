@@ -1,20 +1,41 @@
 {
-   "include": [
-     "$HOME/.config/waybar/Modules",
-     "$HOME/.config/waybar/ModulesCustom"
-     ],
-
-    "layer": "top",
-    "position": "top",
-    "margin-top": 5,
-    "width": 1900,
-    "modules-left": ["hyprland/workspaces", "mpris"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "hyprland/language"],
-    "sway/window": {
-        "max-length": 50
-    }
-    
- 
+  "include": [
+    "$HOME/.config/waybar/Modules",
+    "$HOME/.config/waybar/ModulesCustom"
+  ],
+  "layer": "top",
+  "position": "top",
+  "margin-top": 5,
+  "width": 1900,
+  "modules-left": [
+    "hyprland/workspaces",
+    "mpris"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "hyprland/language"
+  ],
+  "sway/window": {
+    "max-length": 50
+  },
+  "pulseaudio": {
+    "on-click": "pavucontrol",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 muted",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "tooltip": true
+  }
 }
-

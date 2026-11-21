@@ -20,14 +20,12 @@
 ---- MONITORS ----
 ------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-    output   = "",
-    mode     = "preferred",
+    output   = "HDMI-A-2",
+    mode     = "1920x1080@144",
     position = "auto",
-    scale    = "auto",
+    scale    = 1,
 })
-
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -56,12 +54,13 @@ hl.env("XCURSOR_SIZE", "24")
 hl.on("hyprland.start", function()
 --    hl.exec_cmd("nwg-dock-hyprland -d -hd 50 -l overlay -i 30 -a center -lp start -mb 20 -nolauncher")
     hl.exec_cmd("waybar")
-    hl.exec_cmd("mpvpaper -o 'no-audio --loop-file=inf --panscan=1' '*' $HOME/.config/hypr/arona-and-you-blue-archive-moewalls-com.mp4")
+    hl.exec_cmd("mpvpaper -o 'no-audio --loop-file=inf --panscan=1' '*' /home/fillos/.config/hypr/wallpaper22.png")
     hl.exec_cmd("swaync")
     hl.exec_cmd("swayosd-server")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("~/.cache/yay/hyprwave/hyprwave-1.0/hyprwave")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
+    hl.exec_cmd("sleep 2 && hyprctl eval 'hl.config({ cursor = { no_hardware_cursors = 1 } })'")
 end)
 
 
@@ -306,6 +305,7 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("$HOME/.local/bin/memepicker"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("hyprpicker | wl-copy"))
+hl.bind(mainMod .. " + GRAVE", hl.dsp.exec_cmd("easyeffects --bypass-toggle"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -398,3 +398,6 @@ hl.window_rule({
 
 
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+
+-- Custom mouse cursor overlay
+os.execute([[pgrep -u "$USER" -f '[p]ython.*mouse-dot.py' >/dev/null || (python "$HOME/.local/bin/mouse-dot.py" >/tmp/mouse-dot.log 2>&1 &) ]])
