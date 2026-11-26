@@ -15,6 +15,7 @@
     "clock"
   ],
   "modules-right": [
+    "custom/easyeffects",
     "pulseaudio",
     "hyprland/language"
   ],
