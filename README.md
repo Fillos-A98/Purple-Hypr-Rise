@@ -114,6 +114,7 @@ Purple-Hypr-Rise/
 │   ├── kitty/
 │   ├── qt6ct/
 │   └── waybar/
+│   └── swaync/
 ├── scripts/
 │   ├── install-dependencies.sh
 │   └── set-font.sh
