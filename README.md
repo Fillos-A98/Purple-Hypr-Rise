@@ -77,6 +77,14 @@ git clone https://github.com/Fillos-A98/Purple-Hypr-Rise.git
 cd Purple-Hypr-Rise
 ```
 
+Install the required Arch Linux packages:
+
+```bash
+bash scripts/install-dependencies.sh
+```
+
+The installer uses `pacman` for official repository packages and `yay` or `paru` for AUR packages. Install an AUR helper first if you want it to install `mpvpaper` automatically.
+
 Back up your existing configuration, then copy the included configs:
 
 ```bash
@@ -107,6 +115,7 @@ Purple-Hypr-Rise/
 │   ├── qt6ct/
 │   └── waybar/
 ├── scripts/
+│   ├── install-dependencies.sh
 │   └── set-font.sh
 ├── screenshots/
 ├── .bashrc
@@ -118,8 +127,8 @@ Purple-Hypr-Rise/
 
 - Update the monitor name and resolution in the Hyprland configuration.
 - Change wallpaper paths and autostart commands to match your system.
-- Install the applications and fonts listed above before enabling their related modules.
-- Review keybindings and scripts before using them on your machine.
+- Install the fonts listed above separately; SF Pro Display and Unbounded Nerd Font are not installed by the dependency script.
+- Review keybindings and scripts before using them.
 
 The wallpaper shown in the earlier screenshots is available [here](https://drive.google.com/drive/folders/1ubTPX-AHSEwgFKzmN4rK6RSA_vKdBR9p?usp=sharing). The wallpaper itself is not included in this repository.
 
